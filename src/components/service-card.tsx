@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { buildWhatsAppLink, serviceBookingMessage, type Service } from "@/lib/barbershop-data";
+import { BARBER_SHOP, buildWhatsAppLink, serviceBookingMessage, type Service } from "@/lib/barbershop-data";
 
 interface ServiceCardProps {
   service: Service;
@@ -9,7 +9,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ service, className }: ServiceCardProps) {
   const bookingLink = buildWhatsAppLink(
-    "5511999999999",
+    BARBER_SHOP.phone,
     serviceBookingMessage(service.name)
   );
 
